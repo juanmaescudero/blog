@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    src: string
+}
+
+const { src } = Astro.props;
+---
+
+<Image 
+    src={src} 
+    width={100}
+    height={100}
+    alt="avatar" 
+    class="shadow rounded-full max-w-full h-auto align-middle border-none m-0"
+/>

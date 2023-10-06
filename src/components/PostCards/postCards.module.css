@@ -1,0 +1,10 @@
+.postcard-article-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.image-container-row {
+    width: auto;
+    max-width: 150px;
+    min-width: 150px;
+}

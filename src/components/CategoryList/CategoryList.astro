@@ -1,0 +1,16 @@
+---
+    import { getCollection } from 'astro:content'
+    const allPosts = await getCollection('posts')
+    const uniqueCategories = [...new Set(allPosts.map((post) => post.data.category).flat())]
+---
+
+<div class="flex mt-6 mb-6 cursor-pointer">
+    {uniqueCategories.map((category) => (
+        <a 
+            href={`category/${category}`} 
+            class="bg-sky-100 text-sky-600 text-md font-medium mr-2 px-5 py-3 rounded-full hover:bg-sky-300 hover:text-white no-underline"
+        >
+            {category}
+        </a>
+    ))}
+</div>

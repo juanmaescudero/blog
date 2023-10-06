@@ -11,7 +11,7 @@ tags:
 pubDate: 2023-09-09
 cover: src/images/arc.webp
 coverAlt: VisVrs-Aliases
-author: VV
+author: develjuanma
 ---
 
 Astro is an **all-in-one** **web framework** for building **fast,** **content-focused websites.**

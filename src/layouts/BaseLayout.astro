@@ -6,8 +6,8 @@ import '../styles/global.css';
 
 const { 
   entry,
-  pageTitle = 'VisVrs: An Astro Theme for Visual Storytelling', 
-  description = 'VisVrs is an Astro theme specifically designed for photo and text blogging, making it ideal for blog authors and content creators.', 
+  pageTitle = 'develjuanma | Tech blog to explore the World of Web Development', 
+  description = 'Articles, tutorials, and resources on Frontend, JavaScript, React, CSS, and Web Performance Improvement. Join me on this technological journey', 
   cover = '/open-graph.webp' 
 } = Astro.props;
 ---
@@ -39,9 +39,8 @@ const {
 
     <ViewTransitions />
   </head>
-  <body class='mx-auto prose prose-neutral px-4 prose-img:rounded dark:prose-invert dark:bg-neutral-900 lg:max-w-screen-lg'>
+  <body class='mx-auto prose prose-neutral px-4 dark:prose-invert dark:bg-neutral-900 lg:max-w-screen-lg'>
   <Header />
-    <h1 class='text-center'>{pageTitle}</h1>
     <slot />
     <Footer />
   </body>

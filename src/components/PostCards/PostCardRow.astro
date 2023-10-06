@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import styles from "./postCards.module.css"
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  imgWidth?: number;
+  imgHeight?: number;
+  eagerLoad?: boolean;
+  isSpecialCard?: boolean;
+}
+
+const { post, isSpecialCard = false } = Astro.props;
+---
+<a href={`/${post.slug}`} class="rounded postcard-link not-prose">
+  <article class={`${styles["postcard-article-row"]} rounded-md border border-slate-200 dark:border-slate-700`}>
+    <div class={`${styles["image-container-row"]}`}>
+      <Image 
+        src={post.data.cover}
+        alt={post.data.coverAlt}
+        width={150}
+        height={150}
+        format='webp'
+        class={'rounded-md'}
+        loading={isSpecialCard ? 'eager' : 'lazy'}
+      />
+    </div>
+    <div class={`${styles["postcard-content-row"]}`}>
+        <h2 class="postcard-title m-0">{post.data.title}</h2>
+        <span class="postcard-date">{new Date(post.data.pubDate).toLocaleDateString()}</span>
+        {post.data.category.map((category: string) => (
+            <span class="postcard-category">{category}</span>
+        ))}
+        <span class={"flex text-slate-500"}>{post.data.author}</span>
+    </div>
+  </article>
+</a>

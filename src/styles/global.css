@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 .postcard-link {
-    @apply transition-all ease-in-out duration-500 hover:shadow-2xl rounded overflow-hidden hover:-translate-y-1 hover:scale-105;
+    @apply transition-all ease-in-out duration-500 hover:shadow-2xl rounded overflow-hidden hover:scale-105;
 }
 
 .postcard-article {

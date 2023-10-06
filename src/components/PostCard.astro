@@ -12,7 +12,7 @@ interface Props {
 
 const { post, isSpecialCard = false } = Astro.props;
 ---
-<a href={`/${post.slug}`} class="postcard-link not-prose">
+<a href={`/${post.slug}`} class={`flex postcard-link not-prose ${isSpecialCard ? 'mt-10 mb-10' : ''}`}>
   <article class={`postcard-article ${isSpecialCard ? 'postcard-article-special' : ''}`}>
     <div class={`postcard-image-container ${isSpecialCard ? 'postcard-image-container-special' : ''}`}>
       <Image 
@@ -25,10 +25,10 @@ const { post, isSpecialCard = false } = Astro.props;
       />
     </div>
     <div class={`postcard-content ${isSpecialCard ? 'postcard-content-special' : ''}`}>
-      <span class="postcard-date">{new Date(post.data.pubDate).toLocaleDateString()}</span>
-      <span class="postcard-category">{post.data.category[0]}</span>
       <h2 class="postcard-title">{post.data.title}</h2>
       {isSpecialCard ? <p class="postcard-description-special">{post.data.description}</p> : ''}
+      <span class="postcard-date">{new Date(post.data.pubDate).toLocaleDateString()}</span>
+      <span class="postcard-category">{post.data.category[0]}</span>
     </div>
   </article>
 </a>
